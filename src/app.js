@@ -15,7 +15,7 @@ function verifyRepositoryExistent(request, response, next) {
   const repositoryIndex = findRepositoryIndexId(request.params.id);
 
   if (repositoryIndex < 0) {
-    response.status(400).json({errorMessage: "Repository not found."});
+    return response.status(400).json({errorMessage: "Repository not found."});
   }
 
   next();
